@@ -1,0 +1,3 @@
+[submodule "utils/rogue-jndi"]
+	path = utils/rogue-jndi
+	url = https://github.com/veracode-research/rogue-jndi
