@@ -1,7 +1,7 @@
 FROM alpine
 ADD . /Log4jUnifi
 RUN apk update && \
-    apk add git openjdk11 py3-pip python3 maven 
+    apk add git openjdk11 py3-pip python3 maven py3-requests
 WORKDIR /Log4jUnifi
 RUN mvn package -f /Log4jUnifi/utils/rogue-jndi/
 RUN pip3 install -r requirements.txt
